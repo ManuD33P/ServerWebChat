@@ -5,7 +5,7 @@ class Socket{
         
         this.io = server && new Server( server ,{
             cors: {
-                origin: "*"
+                origin: "https://web-chat-pied.vercel.app/"
             }
         });
 
