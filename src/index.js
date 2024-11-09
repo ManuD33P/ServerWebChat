@@ -7,7 +7,12 @@ const Chat = require('./server/class/Room/chat');
 const {FRONT_ENDPOINT} = process.env;
 
 const app = express();
-app.use(cors({ origin: FRONT_ENDPOINT || "https://web-chat-pied.vercel.app"  }));
+app.use(cors({ 
+    origin: FRONT_ENDPOINT || "https://web-chat-pied.vercel.app" , 
+    credentials: true, 
+    optionsSuccessStatus: 200 
+}));
+
 const server = http.createServer(app);
 const socketInstance = new Socket(server)
 const chatInstance = new Chat(socketInstance.io);
