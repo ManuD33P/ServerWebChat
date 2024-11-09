@@ -18,6 +18,10 @@ module.exports = (io) => {
     io.on('connection', (socket)=>{
         console.log(`Usuario ingreso al server`)
             //event's of conection
+        const findInfoUser = socket.handshake.query?.user;
+
+        if(findInfoUser) { onJoinController(socket,findInfoUser)}
+        
         socket.on(EVENT_ON.ONJOIN, (UserObj) => onJoinController(socket, UserObj))
         socket.on(EVENT_ON.ONPART, (reason) => onPartController(socket, reason))
            //event's of messages
