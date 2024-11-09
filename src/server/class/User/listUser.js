@@ -6,22 +6,22 @@ class ListUser{
     }
 
     addUser(user,socket){
-        if(this._users.has(user.nick)) return false //false = user is already in use, true= user joined.
+        if(this._users.has(user?.nick)) return false //false = user is already in use, true= user joined.
         const newUser = new User(user,socket);
         this._users.set(user.nick,newUser);
         return true
     }
 
     remUser(user){
-       return this._users.delete(user.nick); //true = user is exists, false= user is not found 
+       return this._users.delete(user?.nick); //true = user is exists, false= user is not found 
     }
 
     isExists(user){
-        return this._users.has(user.nick);
+        return this._users.has(user?.nick);
     }
 
     getUser(user){
-        return this._users.get(user.nick)
+        return this._users.get(user?.nick)
     }
 
     getListUser(){
