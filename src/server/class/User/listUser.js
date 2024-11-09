@@ -8,7 +8,7 @@ class ListUser{
     addUser(user,socket){
         if(this._users.has(user?.nick)) return false //false = user is already in use, true= user joined.
         const newUser = new User(user,socket);
-        this._users.set(user.nick,newUser);
+        this._users.set(user?.nick,newUser);
         return true
     }
 
