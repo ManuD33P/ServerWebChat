@@ -10,6 +10,7 @@ function onPartController(socket, reason){
             socket.broadcast.emit(EVENT_EMIT.ONPART,user);
         } 
     }
+    console.log("Desconectado del servidor de Socket.IO");
 }
 
 
