@@ -4,6 +4,7 @@ class Socket{
     constructor(server){
         
         this.io = server && new Server(server, {
+            transports: ['websocket', 'polling'],
             cors: { 
                 origin: FRONT_ENDPOINT, 
                 methods: ["GET", "POST"], 
