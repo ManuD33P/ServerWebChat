@@ -1,11 +1,11 @@
 const { Server } = require("socket.io");
-
+const { FRONT_ENDPOINT } = process.env; // Importar la variable de entorno
 class Socket{
     constructor(server){
         
         this.io = server && new Server( server ,{
             cors: {
-                origin: "https://web-chat-pied.vercel.app/"
+                origin: FRONT_ENDPOINT || "https://web-chat-pied.vercel.app"
             }
         });
 
